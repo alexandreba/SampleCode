@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OBS_RECETTEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="OBS_RECETTEModelStoreContainer">
+          <EntitySet Name="Suppliers" EntityType="OBS_RECETTEModel.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierAdress" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierZipCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierLatitude" Type="decimal" Scale="8" />
+          <Property Name="SupplierLongitude" Type="decimal" Scale="8" />
+          <Property Name="SupplierPhoneNumber" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierFax" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierIsTopPartner" Type="bit" />
+          <Property Name="SupplierEmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierWebSite" Type="nvarchar" MaxLength="200" />
+          <Property Name="SupplierIsActive" Type="bit" Nullable="false" />
+          <Property Name="SupplierGeolocQuality" Type="int" />
+          <Property Name="SupplierGeographyPoint" Type="geography" />
+          <Property Name="SupplierCountryId" Type="int" Nullable="false" />
+          <Property Name="SupplierDistance" Type="int" Nullable="false" />
+          <Property Name="SupplierThreaded" Type="bit" Nullable="false" />
+          <Property Name="SupplierThreadedState" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OBS_RECETTEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OBS_RECETTEEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Suppliers" EntityType="OBS_RECETTEModel.Supplier" />
+        </EntityContainer>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierAdress" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierZipCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierCity" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierLatitude" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="SupplierLongitude" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="SupplierPhoneNumber" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierFax" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierIsTopPartner" Type="Boolean" />
+          <Property Name="SupplierEmail" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierWebSite" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierIsActive" Type="Boolean" Nullable="false" />
+          <Property Name="SupplierGeolocQuality" Type="Int32" />
+          <Property Name="SupplierGeographyPoint" Type="Geography" />
+          <Property Name="SupplierCountryId" Type="Int32" Nullable="false" />
+          <Property Name="SupplierDistance" Type="Int32" Nullable="false" />
+          <Property Name="SupplierThreaded" Type="Boolean" Nullable="false" />
+          <Property Name="SupplierThreadedState" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OBS_RECETTEModelStoreContainer" CdmEntityContainer="OBS_RECETTEEntities">
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="OBS_RECETTEModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierAdress" ColumnName="SupplierAdress" />
+                <ScalarProperty Name="SupplierZipCode" ColumnName="SupplierZipCode" />
+                <ScalarProperty Name="SupplierCity" ColumnName="SupplierCity" />
+                <ScalarProperty Name="SupplierLatitude" ColumnName="SupplierLatitude" />
+                <ScalarProperty Name="SupplierLongitude" ColumnName="SupplierLongitude" />
+                <ScalarProperty Name="SupplierPhoneNumber" ColumnName="SupplierPhoneNumber" />
+                <ScalarProperty Name="SupplierFax" ColumnName="SupplierFax" />
+                <ScalarProperty Name="SupplierIsTopPartner" ColumnName="SupplierIsTopPartner" />
+                <ScalarProperty Name="SupplierEmail" ColumnName="SupplierEmail" />
+                <ScalarProperty Name="SupplierWebSite" ColumnName="SupplierWebSite" />
+                <ScalarProperty Name="SupplierIsActive" ColumnName="SupplierIsActive" />
+                <ScalarProperty Name="SupplierGeolocQuality" ColumnName="SupplierGeolocQuality" />
+                <ScalarProperty Name="SupplierGeographyPoint" ColumnName="SupplierGeographyPoint" />
+                <ScalarProperty Name="SupplierCountryId" ColumnName="SupplierCountryId" />
+                <ScalarProperty Name="SupplierDistance" ColumnName="SupplierDistance" />
+                <ScalarProperty Name="SupplierThreaded" ColumnName="SupplierThreaded" />
+                <ScalarProperty Name="SupplierThreadedState" ColumnName="SupplierThreadedState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
